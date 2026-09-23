@@ -1,8 +1,4 @@
-# SimpleSpy V3
-
-SimpleSpy V3 是一款渗透测试工具，用于拦截客户端发送到服务器的[远程调用](https://developer.roblox.com/en-us/articles/Remote-Functions-and-Events)。
-
-SimpleSpy V3 的设计目标是成为“默认”的远程间谍工具，以精简、高性能和高可靠性为核心理念。你可以在 [Infinite Yield](https://github.com/EdgeIY/infiniteyield) 等地方找到 SimpleSpy V3。
+# SimpleSpy V3汉化版
 
 ## 状态
 SimpleSpy V3 已停止维护。不过我对其进行了汉化处理
