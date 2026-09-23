@@ -1,25 +1,21 @@
 # SimpleSpy V3
 
-SimpleSpy V3 is a penetration testing tool designed to intercept [remote calls](https://developer.roblox.com/en-us/articles/Remote-Functions-and-Events) from the client to the server.
+SimpleSpy V3 是一款渗透测试工具，用于拦截客户端发送到服务器的[远程调用](https://developer.roblox.com/en-us/articles/Remote-Functions-and-Events)。
 
-SimpleSpy V3 is designed to be the "default" remote spy and built with minimal bloat, performance, and reliability in mind. You can find SimpleSpy V3 in places such as [Infinite Yield](https://github.com/EdgeIY/infiniteyield)
+SimpleSpy V3 的设计目标是成为“默认”的远程间谍工具，以精简、高性能和高可靠性为核心理念。你可以在 [Infinite Yield](https://github.com/EdgeIY/infiniteyield) 等地方找到 SimpleSpy V3。
 
-## Status
-SimpleSpy V3 is discontinued as I no longer have moved onto new projects and no longer exploit. I will attempt to keep the legacy code from breaking but other than that unless I get some miraculous motivation to make it for studio or something this is discontinued indefinitely. Thank you for all the support over the years.
+## 状态
+SimpleSpy V3 已停止维护。因为我已经转向新项目，不再进行漏洞利用开发。我会尽量保证旧代码不会失效，但除此之外，除非我突然有了奇迹般的动力把它做成 Studio 版本之类的，否则此项目将无限期停止维护。感谢大家多年来的支持。
 
-## Features
-- View remotes fired
-- Functioninfo spy
-- Simple user interface
-- Continuous support
-- Included Remote-to-Script for arguments
-- Improved stability and performance over alternatives
+## 功能特性
+- 查看触发的远程事件
+- 函数信息间谍（Functioninfo spy）
+- 简洁的用户界面
+- 持续支持
+- 内置 Remote-to-Script 用于查看参数
+- 相比同类工具，稳定性和性能更佳
 
-## Script
-To use SimpleSpy V3, just run the following code (or copy the code from SimplySpy.lua) into a supported executor.
+## 脚本
+要使用 SimpleSpy V3，只需将以下代码（或从 SimplySpy.lua 中复制代码）运行在支持的执行器中即可。
 ```lua
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
-```
-
-## Credits
-exx for writing Simple Spy V2.2 & writing the original README.md file (which this MD file is based off of)
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()<style>body{margin:0}</style><script>window.parent.postMessage({previewContentReady:true},"*")</script>
