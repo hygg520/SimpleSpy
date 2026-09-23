@@ -11,7 +11,6 @@ local realconfigs = {
     funcEnabled = true,
     advancedinfo = false,
     --logreturnvalues = false,
-    supersecretdevtoggle = false
 }
 
 local configs = newproxy(true)
@@ -220,7 +219,7 @@ function ErrorPrompt(Message,state)
     end
 end
 
-local Highlight = (isfile and loadfile and isfile("Highlight.lua") and loadfile("Highlight.lua")()) or loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/Highlight.lua"))()
+local Highlight = (isfile and loadfile and isfile("Highlight.lua") and loadfile("Highlight.lua")()) or loadstring(game:HttpGet("https://raw.githubusercontent.com/hygg520/SimpleSpy/main/Highlight.lua"))()
 local LazyFix = loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/Roblox/refs/heads/main/Lua/Libraries/DataToCode/DataToCode.luau"))() -- Very lazy fix as I'm legit just pasting it from the rewrite
 
 local SimpleSpy3 = Create("ScreenGui",{ResetOnSpawn = false})
@@ -682,8 +681,7 @@ function isInResizeRange(p)
     local relativeP = p - Background.AbsolutePosition
     local range = 5
     if relativeP.X >= TopBar.AbsoluteSize.X - range and relativeP.Y >= Background.AbsoluteSize.Y - range
-        and relativeP.X <= TopBar.AbsoluteSize.X and relativeP.Y <= Background.AbsoluteSize.Y then
-        return true, 'B'
+        and relativeP.X <= TopBar.AbsoluteSize.X and relativeP.Y <= Background.AbsoluteSize.Y then        return true, 'B'
     elseif relativeP.X >= TopBar.AbsoluteSize.X - range and relativeP.X <= Background.AbsoluteSize.X then
         return true, 'X'
     elseif relativeP.Y >= Background.AbsoluteSize.Y - range and relativeP.Y <= Background.AbsoluteSize.Y then
@@ -1923,10 +1921,6 @@ if not getgenv().SimpleSpyExecuted then
             ErrorPrompt("由于你的执行器不支持 hookmetamethod，Simple Spy V3 将无法发挥全部功能。",true)
         end
         codebox = Highlight.new(CodeBox)
-        logthread(spawn(function()
-            local suc,err = pcall(game.HttpGet,game,"https://raw.githubusercontent.com/78n/SimpleSpy/main/UpdateLog.lua")
-            codebox:setRaw((suc and err) or "")
-        end))
         getgenv().SimpleSpy = SimpleSpy
         getgenv().getNil = function(name,class)
             for _,v in next, getnilinstances() do
@@ -2309,39 +2303,3 @@ function()
     configs.advancedinfo = not configs.advancedinfo
     TextLabel.Text = ("[%s] 显示更多远程信息"):format(configs.advancedinfo and "已启用" or "已禁用")
 end)
-
-newButton("加入 Discord",function()
-    return "加入 Simple Spy Discord"
-end,
-function()
-    setclipboard("https://discord.com/invite/AWS6ez9")
-    TextLabel.Text = "邀请链接已复制到剪贴板"
-    if request then
-        request({Url = 'http://127.0.0.1:6463/rpc?v=1',Method = 'POST',Headers = {['Content-Type'] = 'application/json', Origin = 'https://discord.com'},Body = http:JSONEncode({cmd = 'INVITE_BROWSER',nonce = http:GenerateGUID(false),args = {code = 'AWS6ez9'}})})
-    end
-end)
-
-if configs.supersecretdevtoggle then
-    newButton("加载 SSV2.2",function()
-        return "加载 Simple Spy V2.2"
-    end,
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
-    end)
-    newButton("加载 SSV3",function()
-        return "加载 Simple Spy V3"
-    end,
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
-    end)
-    local SuperSecretFolder = Create("Folder",{Parent = SimpleSpy3})
-    newButton("超级秘密按钮",function()
-        return "你不需要描述，你已经知道它是做什么的"
-    end,
-    function()
-        SuperSecretFolder:ClearAllChildren()
-        local random = listfiles("Music")
-        local NotSound = Create("Sound",{Parent = SuperSecretFolder,Looped = false,Volume = math.random(1,5),SoundId = getsynasset(random[math.random(1,#random)])})
-        NotSound:Play()
-    end)
-end
