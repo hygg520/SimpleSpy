@@ -6,4 +6,4 @@ SimpleSpy V3 已停止维护。不过我对其进行了汉化处理
 ## 脚本
 
 ```lua
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()<style>body{margin:0}</style><script>window.parent.postMessage({previewContentReady:true},"*")</script>
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
