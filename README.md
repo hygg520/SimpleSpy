@@ -5,7 +5,7 @@ SimpleSpy V3 是一款渗透测试工具，用于拦截客户端发送到服务�
 SimpleSpy V3 的设计目标是成为“默认”的远程间谍工具，以精简、高性能和高可靠性为核心理念。你可以在 [Infinite Yield](https://github.com/EdgeIY/infiniteyield) 等地方找到 SimpleSpy V3。
 
 ## 状态
-SimpleSpy V3 已停止维护。因为我已经转向新项目，不再进行漏洞利用开发。我会尽量保证旧代码不会失效，但除此之外，除非我突然有了奇迹般的动力把它做成 Studio 版本之类的，否则此项目将无限期停止维护。感谢大家多年来的支持。
+SimpleSpy V3 已停止维护。不过我也就是hygg对其进行了汉化处理
 
 ## 功能特性
 - 查看触发的远程事件
